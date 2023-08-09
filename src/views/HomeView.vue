@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div style="margin: 200px 0px; text-align: center; font-size: 30px;">Hello Open Cloud Platform</div>
 </template>

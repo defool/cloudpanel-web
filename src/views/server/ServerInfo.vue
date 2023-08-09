@@ -1,5 +1,8 @@
 <template>
-    <el-tabs type="border-card" class="demo-tabs">
+    <div v-if="route.query.serverId === '7'">
+        <DockerAdmin />
+    </div>
+    <el-tabs v-else type="border-card" class="demo-tabs">
         <el-tab-pane label="Spec">
             <template #label>
                 <span class="custom-tabs-label">
@@ -30,6 +33,9 @@
 import { Tools } from '@element-plus/icons-vue'
 import { reactive } from 'vue'
 import ContainerInfo from "./ContainerInfo.vue"
+import DockerAdmin from "./DockerAdmin.vue"
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
 // do not use same name with ref
 const form = reactive({

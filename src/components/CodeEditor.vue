@@ -2,7 +2,7 @@
 <template>
     <div class="editor">
         <div class="line-numbers">
-            <span v-for="_ in value.split('\n')"></span>
+            <span v-for="{index} in value.split('\n')" :key="index"></span>
         </div>
         <el-input class="code-input" ref="codeInput" v-model="value" @keydown.tab.prevent="onTabKeyDown"
             :autosize="{ minRows: 20 }" style="background-color: #403c3c;" type="textarea" placeholder="Please input" />

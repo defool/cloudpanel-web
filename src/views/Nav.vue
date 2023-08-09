@@ -9,7 +9,7 @@
                             <icon-menu v-if="data.type === 'app'" />
                         </el-icon>
 
-                        <RouterLink v-if="data.type === 'server'" :to="'/server-info?server_id=' + data.id">{{ node.label }}
+                        <RouterLink v-if="data.type === 'server'" :to="{name: 'server-info', query: {serverId: data.id}}">{{ node.label }}
                         </RouterLink>
                         <span v-else>{{ node.label }}</span>
                     </span>
@@ -80,6 +80,23 @@ const searchText = ref('')
 const dialogVisible = ref(false)
 
 const dataSource = ref<Tree[]>([
+    {
+        id: 3,
+        label: 'DockerCloud',
+        type: 'app',
+        children: [
+            {
+                id: 7,
+                label: 'Docker',
+                type: 'server',
+            },
+            {
+                id: 8,
+                label: 'CoreDNS',
+                type: 'server',
+            },
+        ],
+    },
     {
         id: 1,
         label: 'Application 1',
